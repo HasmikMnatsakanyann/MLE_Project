@@ -1,6 +1,5 @@
 class ModelConfig:
     XGB_PARAMS = {
-        'num_rounds': 900,
         'max_depth': 8,
         'eta': 0.09,
         'subsample': 0.8,
