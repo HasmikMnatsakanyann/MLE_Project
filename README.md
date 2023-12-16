@@ -14,7 +14,7 @@ This machine learning project focuses on predicting car prices based on various 
 
 ## Usage
 
-1. **Data Loading:** Ensure the dataset ('ARM_Cars.csv') is available and contains the necessary information.
+1. **Data Loading:** Ensure the dataset ('ARM_Cars.csv') is available and contains the necessary information. You can download it from [Kaggle](https://www.kaggle.com/datasets/karenuniverse/car-sales-in-armenia-091119-041219)
 
 2. **Preprocessing:** Run `preprocessing.py` to prepare the data for model training.
 
