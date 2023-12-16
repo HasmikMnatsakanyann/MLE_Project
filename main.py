@@ -2,12 +2,12 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from preprocessing import data_preprocess
 from train import train_model
-from test import test_model
+from test import test_model,test_loaded_model
 from config import DataConfig
 
 if __name__ == "__main__":
     # Load your data
-    data_path = "ARM_Cars.csv"
+    data_path = "C:/Users/user/Desktop/ARM_Cars.csv"
     data = pd.read_csv(data_path)
 
     X = data.drop(DataConfig.TARGET_COL,axis=1)
@@ -25,6 +25,11 @@ if __name__ == "__main__":
     # Train the model
     model = train_model(X_train, y_train)
 
+    #Test loaded model
+    model_path = 'your_model.json'
+    mae = test_loaded_model(model_path, X_valid, y_valid)
+    print(f'Mean Absolute Error on Validation Set: {mae}')
+
     # Test the model
     mae = test_model(model, X_valid, y_valid)
-    print(f'Mean Absolute Error on Test Set: {mae}')
+    print(f'Mean Absolute Error on Validation Set: {mae}')
