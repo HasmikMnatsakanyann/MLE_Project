@@ -7,7 +7,7 @@ from config import DataConfig
 
 if __name__ == "__main__":
     # Load your data
-    data_path = "C:/Users/user/Desktop/ARM_Cars.csv"
+    data_path = "ARM_Cars.csv"
     data = pd.read_csv(data_path)
 
     X = data.drop(DataConfig.TARGET_COL,axis=1)
