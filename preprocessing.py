@@ -61,7 +61,7 @@ def train_data_preprocess(data):
     X = preprocessor.fit_transform(data)
     X = np.array(X.todense())
 
-    return X, preprocessor
+    return X,preprocessor
 
 def valid_data_preprocess(data, train_data):
     data['Date Posted'] = pd.to_datetime(data['Date Posted'], format='%d.%m.%Y')
@@ -81,3 +81,9 @@ def valid_data_preprocess(data, train_data):
     X = np.array(X.todense()) 
 
     return X
+
+def change_cat_type(data):
+    categorical_cols = ['Car', 'Date Posted','Vehicle Type', 'Wheel left/right', 'Color', 'Transmission']
+    for col in categorical_cols:
+        data[col].astype('category')
+    return data
